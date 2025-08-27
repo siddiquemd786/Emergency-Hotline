@@ -11,8 +11,8 @@
 </head>
 <body class="hind">
     <!-- navbar section -->
-     <div class="w-full hind mx-auto lg:px-[60px] lg:h-[148px] flex justify-between items-center ">
-        <div class="flex items-center lg:w-9/12 lg:h-[100px]  lg:mt-2 ">
+     <div class="w-full hind mx-auto lg:px-[60px] my-4 flex justify-between items-center ">
+        <div class="flex items-center lg:w-9/12   ">
 
 <div class="lg:w-[195px] lg:h-[52px]  flex items-center">
         <img class=" lg:w-[50px] lg:h-[50px] w-6 h-6" src="assets/logo.png" alt="">
@@ -20,9 +20,9 @@
 
 </div>
         </div>
-        <div class=" lg:w-4/12 lg:h-[100px] lg:mt-2  flex gap-2 items-center justify-between ">
-<button class="btn lg:w-[123px] h-6 lg:h-[52px] rounded-full"><p class="font-bold">0</p> <img class="lg:w-[30px] lg:h-[30px] w-5 h-5" src="assets/heart.png" alt=""></button> 
-<button class="btn lg:w-[106px] h-6 lg:h-[52px] rounded-full"><p class="font-bold">100</p> <img class="lg:w-[30px] lg:h-[30px]  w-5 h-5" src="assets/coin.png" alt=""></button>
+        <div class=" lg:w-4/12    flex gap-2 items-center justify-between ">
+<button class="btn lg:w-[123px] h-6 lg:h-[52px] rounded-full"><p id="nav-heart" class=" font-bold">0</p> <img class="lg:w-[30px] lg:h-[30px] w-5 h-5" src="assets/heart.png" alt=""></button> 
+<button class="btn lg:w-[106px] h-6 lg:h-[52px] rounded-full"><p id="coin" class="font-bold">100</p> <img class="lg:w-[30px] lg:h-[30px]  w-5 h-5" src="assets/coin.png" alt=""></button>
 <button class="btn lg:w-[127px] h-6 lg:h-[52px] w-16 rounded-full text-white bg-[#00A63E] outline-none border-none"><p>2</p> <p>copy</p> </button>
         </div>
 
@@ -30,31 +30,32 @@
 
      <!-- banner section -->
 
-     <div class="w-full hind lg:h-[239px] mt-2 flex flex-col justify-center bg-[linear-gradient(90deg,#013223,#006747_50%,#013223_100%)]">
-        <img class="lg:w-[92px] lg:h-[92px] w-8 h-8 mx-auto mt-2 " src="assets/logo-dark.png" alt="">
-        <h1 class="lg:text-[40px] text-[#ffffff] font-bold text-center mt-2">Emergency Service Directory</h1>
+     <div class="w-full hind pt-2  flex flex-col justify-center bg-[linear-gradient(90deg,#013223,#006747_50%,#013223_100%)]">
+        <img class="lg:w-[92px] lg:h-[92px] w-8 h-8 mx-auto mt-1 " src="assets/logo-dark.png" alt="">
+        <h1 class="lg:text-[40px] text-[#ffffff] font-bold text-center mt-1">Emergency Service Directory</h1>
         <p class="lg:text-[20px] text-[12px] text-[#ffffff] font-semibold text-center my-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
      </div>
 
  <!-- Card Section     -->
 
- <div class="container mx-auto p-6 grid grid-1 lg:grid-cols-4 sm:grid-cols-1 gap-6">
+ <div class="container mx-auto p-2 mt-2 grid grid-1 lg:grid-cols-4 sm:grid-cols-1 gap-6">
+
         <div class="grid grid-cols-1 sm:grid-cols-3  lg:col-span-3   gap-8">
                 <div class=" shadow-md bg-[#FFFFFF]  p-6 rounded-lg">
                         <div class="flex justify-between items-center">
                                 <div class="w-[60px] h-[60px] rounded-lg flex justify-center items-center bg-[#FFE3E2]"><img class="w-[32px] h-[32px] object-cover" src="assets/emergency.png" alt=""></div>
-                                <img class="w-[30px] h-[30px]  object-cover" src="assets/white-heart.png" alt="">
+                                <img id="card-heart" class="w-[30px] h-[30px]  object-cover" src="assets/white-heart.png" alt="">
                         </div>
                         <h3 class="text-[17px] w-full font-extrabold mt-4">National Emergency Number</h3>
-                        <p class="text-gray-400 text-[14px]">National Emergency</p>
-                        <h1 class="my-3 text-[24px] font-extrabold">999</h1>
+                        <p id="service-name" class="text-gray-400 text-[14px]">National Emergency</p>
+                        <h1 id="Number" class="my-3 text-[24px] font-extrabold">999</h1>
 
                         <div class=" px-4 py-1 rounded-full justify-center inline-block items-center bg-[#FFE3E2]">
                                 <p class="">All</p>
                         </div>
                         <div class="flex justify-between mt-4">
                                 <button class="btn  w-[48%]  text-black"><img src="assets/copy.png" alt="">copy</button>
-                                <button class="btn  w-[48%] text-white font-normal bg-[#00A63E]"><img src="assets/phone.png" alt=""> call</button>
+                                <button id="call-btn" class="btn  w-[48%] text-white font-normal bg-[#00A63E]"><img src="assets/phone.png" alt=""> call</button>
                         </div>
                 </div>
                   <div class=" shadow-md bg-[#FFFFFF]  p-6 rounded-lg">
@@ -215,6 +216,8 @@
     </div>
 
   </div>
+
+  <script src="index.js"></script>
 
 </body>
 </html>
