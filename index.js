@@ -1,6 +1,6 @@
 // index.js
 let heartNav=document.getElementById("nav-heart")
-let heart=document.getElementById("card-heart")
+let heart=document.getElementsByClassName("card-heart")
 let callButton=document.getElementById("first-button")
 let serviceName=document.getElementsByClassName("service-name")
 let number=document.getElementsByClassName("Number")
@@ -17,23 +17,27 @@ let copyNumber=document.getElementById("copy-number")
 
 let count=0
 
-heart.addEventListener("click",function(){
-    count++
+for(let n=0; n<heart.length;n++){
+  heart[n].addEventListener("click", function(){
+ count++
     heartNav.textContent =count
+  })
+}
 
-})
+
 
  
    function callHandaler (index){ 
    let service= serviceName[index].innerText
      let callNumber=number[index].innerText   
 
-          alert( `📞 "calling" ${service} ${callNumber}  `)
+         
     let num=parseInt(coin.innerText)
-     if(num<20){
-    alert("Not enough coins!");
+     if(num <= 0){
+    alert(`👉 “You don’t have enough coins. At least 20 coins are required to make a call.”`);
         return;
    }
+    alert( `📞 "calling" ${service} ${callNumber}  `)
    let result=num-20
    coin.innerText=result
     let date=new Date()
@@ -41,12 +45,12 @@ heart.addEventListener("click",function(){
 
    let child= document.createElement("div")
    child.innerHTML=`  <div id="div-history" class="bg-[#FAFAFA] flex justify-between items-center p-2 mt-4 rounded-lg">
-        <div  class="w-[60%]">
-                <h1 id="sirvice-history" class="font-semibold">${service}</h1>
+        <div  class="w-[70%]">
+                <h1 id="sirvice-history" class="font-semibold text-[14px] w-full">${service}</h1>
                 <p id="call-history">${callNumber}</p>
 
         </div>
-        <div> <h1 id="time">${currentDate}</h1></div>
+        <div> <h1 id="time " class="text-[14px]">${currentDate}</h1></div>
 
     </div>`
     parentHistory.appendChild(child)
@@ -67,17 +71,21 @@ heart.addEventListener("click",function(){
 let copyCount=0
 
 function copyNum(index){
+  
   let copyN=number[index].innerText
+  alert(`"Number copied " ${copyN}`)
   return copyN
 
 }
 
 for(let j=0; j<copyBtn.length; j++){
   copyBtn[j].addEventListener("click",function () {
+    
     copyCount++
     copyNumber.innerText=copyCount
 
    navigator.clipboard.writeText(copyNum(j))
+   
     
   })
 }
