@@ -5,10 +5,16 @@ let callButton=document.getElementById("first-button")
 let serviceName=document.getElementsByClassName("service-name")
 let number=document.getElementsByClassName("Number")
 let coin=document.getElementById("coin")
-let divHistory=document.getElementById("div-history")
+let divHistory=document.querySelector(".div-history")
 let clearButton=document.getElementById("btn-clear")
-let parentHistory=document.getElementById("parent-history")
+let parentHistory=document.querySelector(".parent-history")
 let calls=document.getElementsByClassName("call")
+let copyBtn=document.getElementsByClassName("copy-button ")
+let copyNumber=document.getElementById("copy-number")
+
+
+
+
 let count=0
 
 heart.addEventListener("click",function(){
@@ -17,22 +23,7 @@ heart.addEventListener("click",function(){
 
 })
 
-console.log(number)
-
-
-
-clearButton.addEventListener("click",function(){
-
-  divHistory.hidden = true; 
-  parentHistory.hidden = false;
-  
-
-
-})
-
-
-
-
+ 
    function callHandaler (index){ 
    let service= serviceName[index].innerText
      let callNumber=number[index].innerText   
@@ -59,8 +50,12 @@ clearButton.addEventListener("click",function(){
 
     </div>`
     parentHistory.appendChild(child)
-    }
 
+    clearButton.addEventListener("click",function(){
+      child.remove()
+    })
+
+ }
 
 
  for (let i = 0; i < calls.length; i++) {
@@ -68,3 +63,23 @@ clearButton.addEventListener("click",function(){
     callHandaler(i);
   });
 }
+
+let copyCount=0
+
+function copyNum(index){
+  let copyN=number[index].innerText
+  return copyN
+
+}
+
+for(let j=0; j<copyBtn.length; j++){
+  copyBtn[j].addEventListener("click",function () {
+    copyCount++
+    copyNumber.innerText=copyCount
+
+   navigator.clipboard.writeText(copyNum(j))
+    
+  })
+}
+
+
